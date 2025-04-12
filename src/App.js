@@ -1,4 +1,5 @@
 import "./App.css";
+import Exam from "./components/Exam";
 import Feature from "./components/Feature";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -11,6 +12,7 @@ function App() {
       <Header/>
       <Home/>
       <Information/>
+      <Exam/>
       <Feature/>
     </div>
   );

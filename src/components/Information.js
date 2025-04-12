@@ -1,18 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import ScienceIcon from "@mui/icons-material/Science";
-import FunctionsIcon from "@mui/icons-material/Functions";
-import BiotechIcon from "@mui/icons-material/Biotech";
-import AgricultureIcon from "@mui/icons-material/Agriculture";
-import BusinessIcon from "@mui/icons-material/BusinessCenter";
-import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";
-import LanguageIcon from "@mui/icons-material/Language";
+import eco from "../assests/economic-growth.png" 
+import bio from "../assests/bacteria.png";
+import agri from "../assests/planting.png";
 import BarChartIcon from "@mui/icons-material/BarChart";
-import Lottie from "lottie-react";
-import animationData from "../assests/Animation - 1744354582020.json";
+import chem from "../assests/chem.png";
+import physics from "../assests/physics.png";
+import math from "../assests/math.png";
+import eng from "../assests/eng.png";
+import commerce from "../assests/data-analysis.png";
 
 const Container = styled.div`
-  background-color: white;
+  background-color: #f9f9f9;
   padding: 3rem 1rem;
   display: flex;
   justify-content: center;
@@ -29,14 +28,20 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const SectionTitle = styled.h2`
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #066f2d;
-  margin-bottom: 2rem;
+const SubjectSection = styled.div`
+  background-color: #f9f9f9;
+`;
 
-  @media (max-width: 480px) {
-    font-size: 1.75rem;
+const SectionTitle = styled.h2`
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 2rem;
   }
 `;
 
@@ -49,7 +54,7 @@ const Grid = styled.div`
 `;
 
 const Item = styled.div`
-  background: #f4f4f4;
+  background: white;
   border-radius: 16px;
   padding: 1.5rem 1rem;
   transition: all 0.3s ease;
@@ -78,12 +83,21 @@ const Item = styled.div`
 `;
 
 const Icon = styled.div`
-  font-size: 48px;
-  color: #066f2d;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
+  width: 48px;
+  height: 48px;
+
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    color: #555;
+  }
 
   @media (max-width: 480px) {
-    font-size: 36px;
+    width: 40px;
+    height: 40px;
   }
 `;
 
@@ -97,184 +111,64 @@ const Label = styled.div`
   }
 `;
 
-const Divider = styled.hr`
-  margin: 3rem auto;
-  width: 80px;
-  border: 2px solid #066f2d;
-  border-radius: 100px;
-`;
-
-const FlexSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  margin-inline: 25px;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-`;
-
-const TextContent = styled.div`
-  flex: 1;
-  text-align: left;
-  max-width: 600px;
-
-  h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #044e1f;
-    margin-bottom: 1rem;
-
-    @media (max-width: 480px) {
-      font-size: 1.5rem;
-    }
-  }
-
-  p {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-
-    @media (max-width: 480px) {
-      font-size: 16px;
-    }
-  }
-`;
-
-const ExamList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-`;
-
-const ExamBadge = styled.div`
-  background-color: #e0f2e9;
-  color: #066f2d;
-  font-weight: 600;
-  padding: 0.75rem 1.25rem;
-  font-size: 16px;
-  border-radius: 30px;
-  border: 2px solid #c6e8d5;
-  transition: 0.3s ease;
-
-  &:hover {
-    background-color: #c6e8d5;
-    color: #044e1f;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 14px;
-    padding: 0.5rem 1rem;
-  }
-`;
-
-const LottieWrapper = styled.div`
-  flex: 1;
-  max-width: 500px;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    max-width: 300px;
-  }
-
-  @media (max-width: 480px) {
-    max-width: 250px;
-  }
-`;
 const Information = () => {
   return (
     <Container>
       <Wrapper>
-        <SectionTitle>Subjects We Cover</SectionTitle>
+        <SubjectSection>
+          <SectionTitle>Subjects We Cover</SectionTitle>
 
-        <Grid>
-          <Item>
-            <Icon>
-              <EmojiObjectsIcon fontSize="inherit" />
-            </Icon>
-            <Label>Physics</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <ScienceIcon fontSize="inherit" />
-            </Icon>
-            <Label>Chemistry</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <FunctionsIcon fontSize="inherit" />
-            </Icon>
-            <Label>Mathematics</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <BiotechIcon fontSize="inherit" />
-            </Icon>
-            <Label>Biology</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <AgricultureIcon fontSize="inherit" />
-            </Icon>
-            <Label>Agriculture</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <BusinessIcon fontSize="inherit" />
-            </Icon>
-            <Label>Commerce</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <BarChartIcon fontSize="inherit" />
-            </Icon>
-            <Label>Economics</Label>
-          </Item>
-          <Item>
-            <Icon>
-              <LanguageIcon fontSize="inherit" />
-            </Icon>
-            <Label>English</Label>
-          </Item>
-        </Grid>
-
-        <Divider />
-
-        <FlexSection>
-          <TextContent>
-            <h3>Your Path to Success in Competitive Exams Begins Here</h3>
-            <p>
-              We offer basic preparation for all major competitive exams,
-              focusing on strengthening your fundamentals and building
-              confidence. With clear explanations, interactive learning, and
-              consistent support, we guide you step-by-step toward success.
-            </p>
-            <ExamList>
-              {[
-                "Board",
-                "NEET",
-                "JEE",
-                "ICAR",
-                "NDA",
-                "VLDA",
-                "HAU",
-                "KVPY",
-                "B.Sc Agriculture",
-              ].map((exam, index) => (
-                <ExamBadge key={index}>{exam}</ExamBadge>
-              ))}
-            </ExamList>
-          </TextContent>
-
-          <LottieWrapper>
-            <Lottie animationData={animationData} loop={true} />
-          </LottieWrapper>
-        </FlexSection>
+          <Grid>
+            <Item>
+              <Icon>
+                <img src={physics} alt="physics" />
+              </Icon>
+              <Label>Physics</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={chem} alt="chemistry" />
+              </Icon>
+              <Label>Chemistry</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={math} alt="maths" />
+              </Icon>
+              <Label>Mathematics</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={bio} alt="biology" />
+              </Icon>
+              <Label>Biology</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={agri} alt="agriculture" />
+              </Icon>
+              <Label>Agriculture</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={commerce} alt="commerce" />
+              </Icon>
+              <Label>Commerce</Label>
+            </Item>
+            <Item>
+              <Icon>
+              <img src={eco} alt="economics" />
+              </Icon>
+              <Label>Economics</Label>
+            </Item>
+            <Item>
+              <Icon>
+                <img src={eng} alt="english" />
+              </Icon>
+              <Label>English</Label>
+            </Item>
+          </Grid>
+        </SubjectSection>
       </Wrapper>
     </Container>
   );
