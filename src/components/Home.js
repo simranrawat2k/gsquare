@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Container = styled.div`
   background-color: #066F2D;
   color: white;
@@ -77,16 +78,22 @@ const Dream = styled.div`
 const Info = styled.div`
   font-weight: 400;
   font-size: 20px;
+  line-height: 1.7;  // Increased line height
   margin-top: 1.5rem;
 
   @media (max-width: 768px) {
     font-size: 18px;
+    line-height: 1.6;
+    margin-top: 1.2rem;
   }
 
   @media (max-width: 480px) {
     font-size: 16px;
+    line-height: 1.5;
+    margin-top: 1rem;
   }
 `;
+
 
 const Highlight = styled.span`
   color: #FFC107; 

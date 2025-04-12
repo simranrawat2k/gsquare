@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,33 +12,35 @@ import {
   Box,
   useTheme,
   useMediaQuery,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { styled } from '@mui/material/styles';
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { styled } from "@mui/material/styles";
+import greenImg from "../assests/logoGreenCrop.png";
+import whiteImg from "../assests/whiteLogoFinal.png";
 
-const navLinks = ['Home', 'Courses', 'Our Team', 'Contact'];
-const mainGreen = '#066F2D';
+const navLinks = ["Home", "Courses", "Our Team", "Contact"];
+const mainGreen = "#066F2D";
 
 const StyledAppBar = styled(AppBar)(({ scrolled }) => ({
-  backgroundColor: scrolled ? '#ffffff' : mainGreen,
-  color: scrolled ? mainGreen : '#ffffff',
-  boxShadow: scrolled ? '0 2px 4px rgba(0,0,0,0.1)' : 'none',
-  transition: 'background-color 0.3s ease, color 0.3s ease',
+  backgroundColor: scrolled ? "#ffffff" : mainGreen,
+  color: scrolled ? mainGreen : "#ffffff",
+  boxShadow: scrolled ? "0 2px 4px rgba(0,0,0,0.1)" : "none",
+  transition: "background-color 0.3s ease, color 0.3s ease",
 }));
 
 const StyledToolbar = styled(Toolbar)({
-  display: 'flex',
-  justifyContent: 'space-between',
+  display: "flex",
+  justifyContent: "space-between",
 });
 
 const NavLinkBox = styled(Box)({
-  display: 'flex',
-  gap: '2rem',
+  display: "flex",
+  gap: "2rem",
 });
 
 const StyledButton = styled(Button)(({ scrolled }) => ({
-  color: scrolled ? mainGreen : '#ffffff',
-  textTransform: 'none',
+  color: scrolled ? mainGreen : "#ffffff",
+  textTransform: "none",
   fontWeight: 500,
 }));
 
@@ -47,7 +49,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const toggleDrawer = (open) => () => {
     setDrawerOpen(open);
@@ -59,12 +61,16 @@ export default function Header() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const drawerList = (
-    <Box sx={{ width: 250 }} onClick={toggleDrawer(false)} onKeyDown={toggleDrawer(false)}>
+    <Box
+      sx={{ width: 250 }}
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
       <List>
         {navLinks.map((text) => (
           <ListItem button key={text}>
@@ -81,7 +87,16 @@ export default function Header() {
         <StyledToolbar>
           {/* Logo */}
           <Typography variant="h6" sx={{ fontWeight: 700 }}>
-            LOGO
+            <img
+              src={scrolled ? greenImg : whiteImg}
+              alt="G-SQUARE Logo"
+              style={{
+                marginTop:"10px",
+                width: "120px",
+                height: "50px",
+                transition: "all 0.3s ease",
+              }}
+            />
           </Typography>
 
           {/* Nav Links (desktop) */}
