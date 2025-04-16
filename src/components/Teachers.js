@@ -65,6 +65,7 @@ const SubText = styled.p`
   max-width: 700px;
   margin: 0 auto 40px;
   font-size: 18px;
+  line-height: 1.6;
 
   @media (max-width: 768px) {
     font-size: 16px;
